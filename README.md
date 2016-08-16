@@ -10,7 +10,7 @@ http://ec2-54-197-209-114.compute-1.amazonaws.com:8000/
 
 # A summary of software you installed and configuration changes made.
 I have installed all of the following:  
-postgres, apache, apache mod wsgi, git, nodejs, npm (an npm modules), python(and related modules)  
+postgres, apache, apache mod wsgi, git, nodejs, npm (and npm modules), python(and related modules)  
 
 # A list of any third-party resources you made use of to complete this project.
 https://discussions.udacity.com/t/markedly-underwhelming-and-potentially-wrong-resource-list-for-p5/8587 (tons of help)  
