@@ -44,6 +44,3 @@ https://www.postgresql.org/docs/9.1/static/app-createuser.html (Looked this up o
 http://askubuntu.com/questions/323131/setting-timezone-from-terminal (Figured out how to set timezone to UTC)  
 
 I am probably missing a few I did a lot of research in getting this server set up.  
-
-Open your ~/.ssh/udacity_key.rsa file in a text editor and copy the contents of that file.  
-During the submission process, paste the contents of the udacity_key.rsa file into the "Notes to Reviewer" field.  
