@@ -8,18 +8,14 @@ Here is the command to ssh to the server:
 
 # Port Configurations
 The ssh server is running on port 2200.  
-The backend application is hosted on port 8080. The front end application is hosted on port 8000.  
-I have blocked port 80 as it is not necessary for my application. This change also required tweaking
-the apache configuration to serve from 8080 (/etc/apache2/ports.conf && /etc/apache2/sites-enabled/000-default).  
-The nodejs server is a bit more homebrewed and runs with nohup but it listens on port 8000 from the /var/www/frontend/run script.  
-Please see https://github.com/coryjamesfisher/Udacity-FSWD-Item-Catalog-Project for project details.  
+I have modified my catalog project from using nodejs on port 8000 & python on 8080 to removing the python/node js servers and only running apache on port 80.  
 
 # User Configurations
 Users must log in using key based authentication. This change was forced in the /etc/ssh/sshd_config file.  
 Both the ubuntu and the grader users have sudo rights. I have tightened both down with files in /etc/sudoers.d so that they require the user to enter their password (amazon defaulted the ubuntu user to passwordless sudo).
 
 # The complete URL to your hosted web application.
-http://ec2-54-197-209-114.compute-1.amazonaws.com:8000/  
+http://ec2-54-197-209-114.compute-1.amazonaws.com/  
 
 # A summary of software you installed
 *Note all software was installed after running sudo apt-get update && sudo apt-get upgrade*  
@@ -41,5 +37,6 @@ http://httpd.apache.org/docs/current/bind.html (while double checking my knowled
 https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=enable%20proxypass%20apache2 (when I tried to work around the single http port problem with proxies but failed because the application changes were too big)  
 https://www.postgresql.org/docs/9.1/static/app-createuser.html (Looked this up only to remember I had it saved in my provision.sh for vagrant)  
 http://askubuntu.com/questions/323131/setting-timezone-from-terminal (Figured out how to set timezone to UTC)  
+http://www.programcreek.com/python/example/65747/flask.send_from_directory  (When setting up proxy to my js/css/html files)
 
 I am probably missing a few I did a lot of research in getting this server set up.  
