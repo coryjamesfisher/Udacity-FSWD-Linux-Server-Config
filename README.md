@@ -3,7 +3,12 @@
 # The IP address and SSH port so your server can be accessed by the reviewer:
 Please give me your public key so that I can put it on the server. (Since it requires key based auth)  '
 Then you should be able to:  
-`ssh -i YOUR_PUBLIC_KEYFILE -p 2200 grader@54.197.209.114`  
+`ssh -i YOUR_PUBLIC_KEYFILE -p 2200 grader@54.197.209.114`
+
+# Nonstandard Ports
+The backend application is hosted on port 8080. The front end application is hosted on port 8000.  
+I have blocked port 80 as it is not necessary for my application.  
+Please see https://github.com/coryjamesfisher/Udacity-FSWD-Item-Catalog-Project for project details.  
 
 # The complete URL to your hosted web application.
 http://ec2-54-197-209-114.compute-1.amazonaws.com:8000/  
