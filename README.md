@@ -1,11 +1,10 @@
 # Udacity-FSWD-Linux-Server-Config
 
 # The IP address and SSH port so your server can be accessed by the reviewer:
-Please give me your public key so that I can put it on the server. (Since it requires key based auth)  
-After I add it I will also give you the password so that you may use sudo commands... Or if you prefer
-I can force your password to expire and you can enter your own.  
-Then you should be able to:  
-`ssh -i YOUR_PUBLIC_KEYFILE -p 2200 grader@54.197.209.114`
+I have attached private key to the review notes. Password authentication is disabled so you will need to use it.  
+I have also attached a temporary password so that you may use sudo commands. I have set it to expired, you will have to enter a new password.  
+Here is the command to ssh to the server:  
+`ssh -i udacity_review.rsa -p 2200 grader@54.197.209.114`
 
 # Port Configurations
 The ssh server is running on port 2200.  
