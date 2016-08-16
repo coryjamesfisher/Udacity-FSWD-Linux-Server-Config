@@ -1,19 +1,29 @@
 # Udacity-FSWD-Linux-Server-Config
 
 # The IP address and SSH port so your server can be accessed by the reviewer:
-Please give me your public key so that I can put it on the server. (Since it requires key based auth)  '
+Please give me your public key so that I can put it on the server. (Since it requires key based auth)  
+After I add it I will also give you the password so that you may use sudo commands... Or if you prefer
+I can force your password to expire and you can enter your own.  
 Then you should be able to:  
 `ssh -i YOUR_PUBLIC_KEYFILE -p 2200 grader@54.197.209.114`
 
-# Nonstandard Ports
+# Port Configurations
+The ssh server is running on port 2200.  
 The backend application is hosted on port 8080. The front end application is hosted on port 8000.  
-I have blocked port 80 as it is not necessary for my application.  
+I have blocked port 80 as it is not necessary for my application. This change also required tweaking
+the apache configuration to serve from 8080 (/etc/apache2/ports.conf && /etc/apache2/sites-enabled/000-default).  
+The nodejs server is a bit more homebrewed and runs with nohup but it listens on port 8000 from the /var/www/frontend/run script.  
 Please see https://github.com/coryjamesfisher/Udacity-FSWD-Item-Catalog-Project for project details.  
+
+# User Configurations
+Users must log in using key based authentication. This change was forced in the /etc/ssh/sshd_config file.  
+Both the ubuntu and the grader users have sudo rights. I have tightened both down with files in /etc/sudoers.d so that they require the user to enter their password (amazon defaulted the ubuntu user to passwordless sudo).
 
 # The complete URL to your hosted web application.
 http://ec2-54-197-209-114.compute-1.amazonaws.com:8000/  
 
-# A summary of software you installed and configuration changes made.
+# A summary of software you installed
+*Note all software was installed after running sudo apt-get update && sudo apt-get upgrade*  
 I have installed all of the following:  
 postgres, apache, apache mod wsgi, git, nodejs, npm (and npm modules), python(and related modules)  
 
